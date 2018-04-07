@@ -1,24 +1,27 @@
-APPLICATION_ID: springmvc
+APPLICATION_ID: cloudprj   //应用名
 service_description:
-  name: csedemo
-  version: 0.0.1
+  name: csePrj  //微服务名
+  version: 0.0.1            //微服务版本号
   properties:
     allowCrossApp: false
 cse:
-  service:
+  service:                  //服务中心信息，其中address为服务中心地址
     registry:
-      address: https://cse.cn-north-1.myhuaweicloud.com:443
+      address: https://cse.cn-north-1.myhwclouds.com:443
       instance:
         watch: false
-  config:
+  config:                   //配置中心信息，其中address为配置中心地址
     client:
-      serverUri: https://cse.cn-north-1.myhuaweicloud.com:443
+      serverUri: https://cse.cn-north-1.myhwclouds.com:443
       refreshMode: 1
       refresh_interval: 5000
+  monitor:                  //服务看板信息，其中address为服务看板地址
+    client:
+      serverUri: https://cse.cn-north-1.myhwclouds.com:443
   rest:
-    address: 0.0.0.0:8080
+    address: 0.0.0.0:8087  //微服务端口，请确保该端口号无冲突
   credentials:
-    accessKey: ak
-    secretKey: sk
+    accessKey: EEZE5HEQMZATLOQFXP79          //请填写AK
+    secretKey: Apu61dCRuf6Yh2y531tHl2IPLv07yXuoSXiKYEJg          //请填写SK
+    project: Project       //项目名，如不配置，优先取服务中心host的第二个字段，此处为cn-north-1；若无法解析，则配置为default，可能导致token认证失败。获取方法见本章节前提条件。
     akskCustomCipher: default
-    project: cn-north-1
