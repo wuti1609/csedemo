@@ -9,6 +9,6 @@ public class CsedemoDelegate {
     public String helloworld(String name){
 
         // Do Some Magic Here!
-        return "Welcom, " + name;
+        return "Welcome, " + name;
     }
 }
