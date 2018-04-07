@@ -5,4 +5,6 @@ ADD target/csedemo-0.0.1-SNAPSHOT.jar .
 ADD target/lib ./lib
 ADD start.sh .
 
+EXPOSE 8087 8087
+
 ENTRYPOINT ["sh", "/home/apps/start.sh"]
